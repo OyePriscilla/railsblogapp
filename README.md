@@ -1,24 +1,68 @@
-# README
+# Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blogging application built with ruby on rails.
 
-Things you may want to cover:
+Additional description about the project and its features.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Major language
+  - Ruby
+  - Rails
 
-* Configuration
+- Technologies used
 
-* Database creation
+```bash
+- Git(version control)
+```
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+- A text editor(preferably Visual Studio Code)
 
-* ...
+### Install
+
+- [Git](https://git-scm.com/downloads)
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+
+### Usage
+
+#### Clone this repository
+
+```bash
+$ git clone https://github.com/OyePriscilla/railsblogapp.git
+$ cd railsblogapp
+```
+
+#### Run project
+
+```bash
+$ ruby filename.rb
+```
+
+## Author
+
+👤 **Oyebade Prisicilla**
+
+* GitHub: [@OyePriscilla](https://github.com/OyePriscilla)
+* Twitter: [@Prisicilla](https://twitter.com/Prisicilla)
+* LinkedIn: [Priscilla](https://linkedin.com/in/oyepriscilla)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/OyePriscilla/OOP-School-Library/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
