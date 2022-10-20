@@ -2,7 +2,7 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rgit ails uses to define your schema when running `bin/rails
+# This file is the source Rails uses to define your schema when running `bin/rails
 # db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
@@ -18,19 +18,19 @@ ActiveRecord::Schema[7.0].define(version: 20_221_018_220_217) do
     t.string 'text'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'users_id', null: false
-    t.bigint 'posts_id', null: false
-    t.index ['posts_id'], name: 'index_comments_on_posts_id'
-    t.index ['users_id'], name: 'index_comments_on_users_id'
+    t.bigint 'author_id', null: false
+    t.bigint 'post_id', null: false
+    t.index ['author_id'], name: 'index_comments_on_author_id'
+    t.index ['post_id'], name: 'index_comments_on_post_id'
   end
 
   create_table 'likes', force: :cascade do |t|
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'users_id', null: false
+    t.bigint 'author_id', null: false
     t.bigint 'posts_id', null: false
+    t.index ['author_id'], name: 'index_likes_on_author_id'
     t.index ['posts_id'], name: 'index_likes_on_posts_id'
-    t.index ['users_id'], name: 'index_likes_on_users_id'
   end
 
   create_table 'posts', force: :cascade do |t|
@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 20_221_018_220_217) do
     t.integer 'likes_counter'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'users_id', null: false
-    t.index ['users_id'], name: 'index_posts_on_users_id'
+    t.bigint 'author_id', null: false
+    t.index ['author_id'], name: 'index_posts_on_author_id'
   end
 
   create_table 'users', force: :cascade do |t|
@@ -53,9 +53,9 @@ ActiveRecord::Schema[7.0].define(version: 20_221_018_220_217) do
     t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key 'comments', 'posts', column: 'posts_id'
-  add_foreign_key 'comments', 'users', column: 'users_id'
+  add_foreign_key 'comments', 'posts'
+  add_foreign_key 'comments', 'users', column: 'author_id'
   add_foreign_key 'likes', 'posts', column: 'posts_id'
-  add_foreign_key 'likes', 'users', column: 'users_id'
-  add_foreign_key 'posts', 'users', column: 'users_id'
+  add_foreign_key 'likes', 'users', column: 'author_id'
+  add_foreign_key 'posts', 'users', column: 'author_id'
 end
