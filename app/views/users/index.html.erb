@@ -1,1 +1,15 @@
-<h1>List all users</h1>
+<section class="homepage">
+<% @user.each do |user| %>
+<div class="homepage-users">
+<img src=<%= user.photo %> alt=<%= user.name %> />
+ <div>
+ <a  href="/users/<%= user.id %>">
+    <ul>
+        <li><%= user.name %></li>
+        <li class="post-count">Number of posts: <%= user.posts_counter || 0 %></li>
+    </ul>
+    </a>
+    </div>
+    </div>
+    <% end %>
+</section>

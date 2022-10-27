@@ -1,1 +1,33 @@
-<h1>Show selected users</h1>
+<section>
+<div class="homepage-users">
+<img src=<%= @user.photo %> alt=<%= @user.name %> />
+ <div>
+ <a  href="/users/<%= @user.id %>">
+    <ul>
+        <li><%= @user.name %></li>
+        <li class="post-count">Number of posts: <%= @user.posts_counter || 0 %></li>
+    </ul>
+    </a>
+    </div>
+</div>
+ <div class="border-style">
+ <h3>Bio</h3>
+ <p><%= @user.bio %></p>
+ </div>
+
+  <% @user.recent_posts.each do |post| %>
+    <%= link_to user_post_path(@user.id, post.id) do %>
+    <div class="show-post">
+      <h3>Post : <%= post.title %></h3>
+      <p><%= post.text %></p>
+      <div class="comments-likes">
+      <p>Comments: <%= post.comments_counter%>,<p>
+      <p>Likes: <%= post.likes_counter %>,</p>
+      </div>
+    </div>
+    <% end %>
+  <% end%>
+
+  <button class="see-all-button"><%=  link_to  "See all posts", user_posts_path(@user) %></button>
+</div>
+</section>
