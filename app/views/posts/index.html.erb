@@ -1,1 +1,41 @@
-<h1>New Post</h1>
+<section>
+  <div class="homepage-users">
+<img src=<%= @user.photo %> alt=<%= @user.name %> />
+ <div>
+ <a  href="/users/<%= @user.id %>">
+    <ul>
+        <li><%= @user.name %></li>
+        <li class="post-count">Number of posts: <%= @user.posts_counter || 0 %></li>
+    </ul>
+    </a>
+    </div>
+    </div>
+
+  <div>
+  <div>
+    <% @posts.each_with_index do |post, index| %>
+      <a href="posts/<%= post.id %>">
+        <div class="all-posts">
+          <div class="show-post post-margin">
+            <h3>Post #<%= index + 1 %></h3>
+             <p><%= post.text%></p>
+           <div class="comments-likes">
+               <p>Comments: <%= post.comments_counter || 0 %>, </span>
+               <p>Likes: <%= post.likes_counter || 0 %></p>
+               </p>
+            </div>
+         </div>
+      </a>
+      <ul class="comments-likes-ul">
+        <div>
+          <% post.recent_comments.each do |comment| %>
+            <li><%= comment.author.name %>: <%= comment.text %> </li>
+          <% end %>
+        </div>
+      </ul>
+      </div>
+    <% end %>
+  </div>
+  <button class="see-all-button"><%=  link_to  "Pagination", user_posts_path(@user) %></button>
+
+</section>
