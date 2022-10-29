@@ -8,10 +8,21 @@
       </div>
     </div>
     <p> <%= @post.text %> </p>
+     <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/likes" do |form| %>
+      <%= form.submit "Like", class: "like-btn border" %>
+    <%end%>
   </div>
-  <ul class="comments-likes-ul">
-    <% @comments.each do |comment| %>
-      <li><%= comment.author.name%>: <%= comment.text %></li>
+
+  <div class="comments border">
+    <% if @post.recent_comments.empty? %>
+        <p>No comment for this post</p>
+    <% else %>
+      <% @post.recent_comments.each do |comment| %>
+        <p><%= comment.author.name %>  :<%= comment.text %></p>
+      <% end %>
     <% end %>
-  </ul>
+  </div>
+  <div class="border comment_link">
+    <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id) %>
+  </div>
 </section>

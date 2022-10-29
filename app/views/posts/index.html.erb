@@ -1,4 +1,5 @@
 <section>
+ <%= link_to "Create Post", new_user_post_path(user_id: @user.id), class: "create-post-btn border" %>
   <div class="homepage-users">
 <img src=<%= @user.photo %> alt=<%= @user.name %> />
  <div>
