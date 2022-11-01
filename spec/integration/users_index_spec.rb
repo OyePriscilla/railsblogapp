@@ -28,15 +28,15 @@ RSpec.describe 'User index', type: :feature do
       end
     end
 
-    scenario 'displays number of posts each user has written' do
-      @users.each do |user|
-        expect(page).to have_content "Number of posts: #{user.posts_counter}"
-      end
-    end
-
     scenario 'displays profile picture for each user' do
       @users.each do |user|
         expect(page).to have_css("img[src*='#{user.photo}']")
+      end
+    end
+
+    scenario 'displays number of posts each user has written' do
+      @users.each do |user|
+        expect(page).to have_content "Number of posts: #{user.posts_counter}"
       end
     end
   end

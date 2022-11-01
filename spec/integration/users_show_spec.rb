@@ -38,12 +38,12 @@ RSpec.describe 'User show', type: :feature do
   describe 'integration' do
     before(:each) { visit user_path @first_user }
 
-    scenario 'display username' do
-      expect(page).to have_content @first_user.name
-    end
-
     scenario 'displays profile picture' do
       expect(page).to have_css("img[src*='#{@first_user.photo}']")
+    end
+
+    scenario 'display username' do
+      expect(page).to have_content @first_user.name
     end
 
     scenario 'display number of posts' do
