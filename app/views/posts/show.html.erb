@@ -1,7 +1,7 @@
 <section>
   <div class="show-post post-margin">
     <div class="post-flex">
-      <h3>Post #<%= @post.id%> by <%= @post.author.name %></h3>
+      <h3><%= @post.title %> #<%= @post.id%> by <%= @post.author.name %></h3>
       <div class="comment">
         <span>Comments: <%= @post.comments_counter || 0%>, </span>
         <span>Likes: <%= @post.likes_counter || 0 %> </span>
