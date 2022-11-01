@@ -50,7 +50,7 @@ Layout/HashAlignment:
 Layout/EndOfLine:
   EnforcedStyle: False
 Layout/ExtraSpacing:
-  AllowForAlignment: false
+  AllowForAlignment: lf
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
