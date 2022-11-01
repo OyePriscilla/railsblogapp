@@ -29,7 +29,7 @@
       </a>
       <ul class="comments-likes-ul">
         <div>
-          <% post.recent_comments.each do |comment| %>
+          <% post.recent_comments.includes(:author).each do |comment| %>
             <li><%= comment.author.name %>: <%= comment.text %> </li>
           <% end %>
         </div>
