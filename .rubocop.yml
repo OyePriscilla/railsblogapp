@@ -48,9 +48,9 @@ Style/FrozenStringLiteralComment:
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/EndOfLine:
-  EnforcedStyle: False
+  EnforcedStyle: lf
 Layout/ExtraSpacing:
-  AllowForAlignment: lf
+  AllowForAlignment: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
