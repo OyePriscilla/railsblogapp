@@ -59,12 +59,12 @@ RSpec.describe 'Post index', type: :feature do
       end
     end
 
-    scenario 'displays number of comments for each post' do
-      expect(page).to have_content("Comments: #{@first_post.comments_counter}")
-    end
-
     scenario 'displays number of likes for each post' do
       expect(page).to have_content("Comments: #{@first_post.likes_counter}")
+    end
+
+    scenario 'displays number of comments for each post' do
+      expect(page).to have_content("Comments: #{@first_post.comments_counter}")
     end
 
     scenario 'displays pagination' do
