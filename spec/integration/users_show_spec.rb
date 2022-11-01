@@ -3,35 +3,34 @@ require 'rails_helper'
 RSpec.describe 'User show', type: :feature do
   before(:each) do
     @first_user = User.create(
-        name: 'Priscilla',
-        photo: 'https://i.im.ge/2022/10/30/2R6c3h.man.jpg',
-        bio: 'Engineer from Nigeria.',
-        posts_counter: 4
-      )
+      name: 'Priscilla',
+      photo: 'https://i.im.ge/2022/10/30/2R6c3h.man.jpg',
+      bio: 'Engineer from Nigeria.',
+      posts_counter: 4
+    )
 
-      User.create(
-        name: 'Sidney',
-        photo: 'https://i.im.ge/2022/10/30/2R6RqY.woman.jpg',
-        bio: 'Engineer from Kenya.',
-        posts_counter: 2
-      )
+    User.create(
+      name: 'Sidney',
+      photo: 'https://i.im.ge/2022/10/30/2R6RqY.woman.jpg',
+      bio: 'Engineer from Kenya.',
+      posts_counter: 2
+    )
 
-      @first_post = Post.create(
-        author: @first_user,
-        title: 'Hello',
-        text: 'This is my first post',
-        comments_counter: 0,
-        likes_counter: 0
-      )
+    @first_post = Post.create(
+      author: @first_user,
+      title: 'Hello',
+      text: 'This is my first post',
+      comments_counter: 0,
+      likes_counter: 0
+    )
 
-      Post.create(
-        author: @first_user,
-        title: 'Hello',
-        text: 'This is my second test post',
-        comments_counter: 0,
-        likes_counter: 0
-      )
-
+    Post.create(
+      author: @first_user,
+      title: 'Hello',
+      text: 'This is my second test post',
+      comments_counter: 0,
+      likes_counter: 0
+    )
 
     @users = User.all
   end

@@ -27,7 +27,7 @@ RSpec.describe 'Post show', type: :request do
     before(:each) { visit user_post_path(@first_user, @first_post) }
 
     scenario 'display post title' do
-        expect(page).to have_content ('New Post')
+      expect(page).to have_content('New Post')
     end
     scenario 'display post author' do
       expect(page).to have_content @first_post.author.name
