@@ -5,7 +5,7 @@ RSpec.describe 'User show', type: :feature do
     @first_user = User.create(
       name: 'Priscilla',
       photo: 'https://i.im.ge/2022/10/30/2R6c3h.man.jpg',
-      bio: 'Engineer from Nigeria.',
+      bio: 'Pastor from Nigeria.',
       posts_counter: 4
     )
 
