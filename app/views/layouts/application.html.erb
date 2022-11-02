@@ -12,9 +12,9 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-</button>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <button type=button><%= user_signed_in? ? link_to('Sign out', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure'}) : link_to('Sign in', new_user_session_path) %> 
     <%= yield %>
   </body>
 </html>
