@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'mailcatcher'
+
+gem 'devise'
+
 gem 'bullet'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
